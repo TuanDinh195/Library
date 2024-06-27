@@ -1,15 +1,12 @@
 
-const myLib = [];
-
-function Book(title,author,pages) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
+function displayBook(){
+    
+    const title = document.getElementById("title").value;
+    const author = document.getElementById("author").value;
+    const pages = document.getElementById("pages").value;
+     
+    
+    alert("Title of Book is" + title + "\n Author is " + author + "\n Pages is " +pages);    
 }
-
-function addBook() {
-    let title = document.querySelector("#title").value;
-    let author = document.querySelector("#author").value;
-    let pages = document.querySelector("#pages").value;
-    let newBook = new Book(title,author,pages);
-}
+   
+submit.addEventListener('click',displayBook);
