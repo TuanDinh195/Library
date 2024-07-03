@@ -7,23 +7,37 @@ function book(title,author,pages) {
     this.pages = pages;
 }
 
+
 function addBook() {
     const title = document.getElementById("title").value;
-    const author = document.getElementById("author").value;
-    const pages = document.getElementById("pages").value;
-    let newBook = newBook(title,author,pages);
-    myLib.push(newBook);
+    const author = document.querySelector("#author").value;
+    const pages = document.querySelector("#pages").value;
     
+    let newBook = new book(title,author,pages);
+
+    myLib.push(newBook);
+   
 }
 function displayLib(){
     let text = "";
     for (let i = 0; i < myLib.length; i++) {
-        text += myLib[i.title] +"<br>";
+        text += myLib[i].title + "<br>";
+        console.log(myLib[i]);
     }
-    document.getElementById("displayLib").innerHTML = text;
+    document.getElementById("displayLib").innerHTML.value = text;
+    
+    console.log(text);
 }
-   
-add.addEventListener('click',addBook);
-displayLibBtn.addEventListener('click',displayLib);
+
+
+
+const button = document.querySelector("#add");
+button.addEventListener('click',addBook);
+
+const button2 = document.querySelector("#displayLibBtn");
+button2.addEventListener('click', displayLib);
+
+
+
 
 
